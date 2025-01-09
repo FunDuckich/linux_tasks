@@ -17,21 +17,29 @@ vim /etc/samba/smb.conf
 ```
 тут я добавил такую инфу:  
 \[Obshaya]  
-\tpath = /root/obshaya  
-\tbrowseable = yes  
-\tguest ok = yes  
-\tread only = yes  
+
+path = /root/obshaya  
+
+browseable = yes  
+
+guest ok = yes  
+
+read only = yes  
 ```
 systemctl restart smb
 smbclient -L localhost
 ```
 перезапустил юнит самбы, второй командой посмотрел все общедоступные папки
 ## 4. Создайте общую папку с паролем с правами на чтение и запись
-\[Drugaya]
-	path = /root/drugaya
-	browseable = yes
-	writable = yes
-	guest ok = no
+\[Drugaya]  
+
+path = /root/drugaya  
+
+browseable = yes  
+
+writable = yes  
+
+guest ok = no
 ## 5. Создайте общую папку с доступом для какой-то группы с полными правами
 ```
 groupadd all_shared
@@ -39,11 +47,16 @@ vim /etc/samba/smb.conf
 ```
 тут я сделал вот что:  
 \[Mmm]  
-\tpath = /root/mmm  
-\tbrowseable = yes  
-\tvalid users = @all_shared  
-\tguest ok = no  
-\twritable = yes
+
+path = /root/mmm  
+
+browseable = yes  
+
+valid users = @all_shared  
+
+guest ok = no  
+
+writable = yes
 ## 6. Создайте общую папку в которой у одной группы будет полный доступ, а у другой только доступ на чтение. Третья группа не должна иметь к ней доступа
 ```
 groupadd full
@@ -53,10 +66,16 @@ vim /etc/samba/smb.conf
 ```
 ну и снова модифицируем конфиг:  
 \[SambaItsCool]  
-\tpath = /root/sambaitscool  
-\tbrowseable = yes  
-\tguest ok = no  
-\tread only = yes  
-\twrite list = @full  
-\tinvalid users = @noaccess  
+
+path = /root/sambaitscool  
+
+browseable = yes  
+
+guest ok = no  
+
+read only = yes  
+
+write list = @full  
+
+invalid users = @noaccess  
 
