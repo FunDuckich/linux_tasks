@@ -6,12 +6,18 @@
 доп. настройки
 ## 3. Отредактируйте файл options так, чтобы можно было подключаться не вводя имя пользвателя и порт
 ```
-Host linux-tasks
+Host root
     HostName 95.31.204.147
     User root
+    Port 240
+
+Host student
+    HostName 95.31.204.147
+    User student
     Port 240
 ```
 ## 4. Назовите подключение удобным для вас спсобом
 ## 5. Проверьте работоспособность
-![](https://github.com/user-attachments/assets/7b69615c-5420-47d3-93a8-2ea840c76678)
+![image](https://github.com/user-attachments/assets/7bff7e62-d164-4722-9125-d0d301bbd8d1)
+
 
