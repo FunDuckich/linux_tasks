@@ -36,7 +36,8 @@ vim /etc/openssh/sshd_config
 ```
 sudo systemctl restart sshd
 ```
-![ну и после первой неудачной попытки ввода, он сразу же меня шлёт подальше](https://github.com/user-attachments/assets/e28aa3e7-85df-4f9b-b228-415316211115)
+ну и после первой неудачной попытки ввода, он сразу же меня шлёт подальше
+![](https://github.com/user-attachments/assets/e28aa3e7-85df-4f9b-b228-415316211115)
 ## 8. Создайте пользователя ssh-user и попробуйте им подключиться к серверу
 ```
 adduser ssh-user
